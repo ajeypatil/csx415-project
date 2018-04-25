@@ -1,0 +1,80 @@
+---
+title: "project-performance"
+author: "Ajey Patil"
+date: "4/15/2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r load_library_and_project}
+
+library("ProjectTemplate")
+
+library("data.table")
+
+setwd("~/R/AirlineDelayAndCancellationsAnalysis")
+
+load.project()
+
+```
+
+## Analyse flight delays
+```{r analyze flight delays}
+
+alldelays <- data.frame(flights$AIRLINE, flights$DEPARTURE_DELAY)
+
+alldelays[is.na(alldelays)] <- 0
+
+alldelaysagg <- aggregate(alldelays$flights.DEPARTURE_DELAY, by=list(alldelays$flights.AIRLINE), FUN=sum )
+
+fdelay <- alldelaysagg[order(-alldelaysagg$x),]
+
+setnames(fdelay,"Group.1","IATA_CODE")
+
+setnames(fdelay,"x","Total Delays")
+
+fmdelay <- merge(x=fdelay,y=airlines,by="IATA_CODE",all=TRUE)
+
+fsdelay <- fmdelay[order(-fmdelay$`Total Delays`),]
+
+```
+
+```{r find average flight delay per flight}
+flights$FLIGHT_INSTANCE <- 1
+
+allfilghtsinstance <- aggregate(flights$FLIGHT_INSTANCE, by=list(flights$AIRLINE), FUN=sum )
+
+setnames(allfilghtsinstance, "Group.1", "IATA_CODE")
+
+setnames(allfilghtsinstance, "x", "NumFlights")
+
+aggf = merge(x=allfilghtsinstance,y=fmdelay,by="IATA_CODE",all=TRUE)
+
+aggf$ave_delay <- (aggf$`Total Delays` * 1.0) / aggf$NumFlights
+
+aggfs <- aggf[order(-aggf$ave_delay),]
+
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r Sorted Flight Total Delays, echo=FALSE}
+
+aggfsplot <- data.frame(aggfs$NumFlights, aggfs$`Total Delays`, aggfs$ave_delay)
+
+plot(aggfsplot)
+
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

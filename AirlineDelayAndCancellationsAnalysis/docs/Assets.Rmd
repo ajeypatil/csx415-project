@@ -1,0 +1,53 @@
+---
+title: "Assets"
+author: "Ajey Patil"
+date: "4/24/2018"
+output: html_document
+---
+
+# Assets for Airline Flight Delays And Cancellations Analysis
+
+## Input
+Summary information on the number of on-time, delayed, canceled, and diverted flights is published in DOT's monthly Air Travel Consumer Report and in this dataset of 2015 flight delays and cancellations.
+
+### Data
+https://www.kaggle.com/usdot/flight-delays/data
+
+* Flights database : flights.csv *
+* Airlines database : airlines.csv *
+* Airports database : airports.csv *
+
+## Data Wrangling
+
+### Intermediate Data
+
+* Average Delays per airline : average_delays.Rmd *
+* Average Delays per airline per day of week : average_delays_per_day_of_week.Rmd *
+* Average Cancellations per airline : average_cancellations.Rmd *
+* Average Cancellations per airline per day of week : average_cancellations_per_day_of_week.Rmd *
+* Average Delays per airline per delay category : average_delays_per_category.Rmd *
+
+## Outputs
+
+### FORMAL PROBLEM STATEMENT
+* CSX415_Project_Formal_Problem_Statment.Rmd *
+
+### DATA WRANGING
+* src/CSX415_Project_Data_Wrangling.R *
+
+### DATA WRANGLING VISUALIZATIONS
+* src/CSX415_Project_Data_Wrangling_visualizations.R *
+* graphs/CSX415_Project_Data_Wrangling_visualizations *
+
+### MODELS
+* src/CSX415_Project_Data_Model_Linear.R *
+* src/CSX415_Project_Data_Model_Tree.R *
+
+### MODEL PERFORMANCE EVALS
+* reports/Model_Performance/CSX415_Project_Data_model-performance-linear.Rmd *
+* reports/Model_Performance/CSX415_Project_Data_model-performance-tree.Rmd *
+
+### MODEL PREDICTION REPORTS
+* reports/Model_Performance/CSX415_Project_Data_model-prediction-linear.Rmd *
+* reports/Model_Performance/CSX415_Project_Data_model-prediction-tree.Rmd *
+
