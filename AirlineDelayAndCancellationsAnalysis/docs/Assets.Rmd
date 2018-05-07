@@ -7,47 +7,70 @@ output: html_document
 
 # Assets for Airline Flight Delays And Cancellations Analysis
 
+## Performance Analysis (complete run)
+* CSX415_Project_airline_performance.Rmd *
+
 ## Input
-Summary information on the number of on-time, delayed, canceled, and diverted flights is published in DOT's monthly Air Travel Consumer Report and in this dataset of 2015 flight delays and cancellations.
+### FORMAL PROBLEM STATEMENT
+* docs/CSX415_Project_Formal_Problem_Statment.Rmd *
 
 ### Data
+#### Flight data
 https://www.kaggle.com/usdot/flight-delays/data
 
 * Flights database : flights.csv *
 * Airlines database : airlines.csv *
 * Airports database : airports.csv *
 
-## Data Wrangling
+#### Weather Data
+https://www.ncdc.noaa.gov/orders/qclcd/,
+This source contains hourly weather data at various airports.
 
-### Intermediate Data
+## Code
 
-* Average Delays per airline : average_delays.Rmd *
-* Average Delays per airline per day of week : average_delays_per_day_of_week.Rmd *
-* Average Cancellations per airline : average_cancellations.Rmd *
-* Average Cancellations per airline per day of week : average_cancellations_per_day_of_week.Rmd *
-* Average Delays per airline per delay category : average_delays_per_category.Rmd *
-
-## Outputs
-
-### FORMAL PROBLEM STATEMENT
-* CSX415_Project_Formal_Problem_Statment.Rmd *
-
-### DATA WRANGING
+### Data Wrangling
 * src/CSX415_Project_Data_Wrangling.R *
 
-### DATA WRANGLING VISUALIZATIONS
-* src/CSX415_Project_Data_Wrangling_visualizations.R *
-* graphs/CSX415_Project_Data_Wrangling_visualizations *
+###  Working model
+* src/models *
+* src/models/CSX415_Project_Data_Model_Naive.R *
+* src/models/CSX415_Project_Data_Model_Linear.R *
+* src/models/CSX415_Project_Data_Model_Tree.R *
 
-### MODELS
-* src/CSX415_Project_Data_Model_Linear.R *
-* src/CSX415_Project_Data_Model_Tree.R *
+###  Running code
+* src *
 
-### MODEL PERFORMANCE EVALS
-* reports/Model_Performance/CSX415_Project_Data_model-performance-linear.Rmd *
-* reports/Model_Performance/CSX415_Project_Data_model-performance-tree.Rmd *
+###  Code dependendcies
+* lib *
 
-### MODEL PREDICTION REPORTS
-* reports/Model_Performance/CSX415_Project_Data_model-prediction-linear.Rmd *
-* reports/Model_Performance/CSX415_Project_Data_model-prediction-tree.Rmd *
+## Outputs
+### Performance report
+* reports/CSX415_Project_Airline_performance_report.md *
+
+### Observations
+* reports/CSX415_Project_Modelling_Analysis_Obervations.md *
+* graphs/CSX415_Project_Data_visualizations *
+
+#### MODEL PERFORMANCE EVALS
+* reports/Model_Performance/CSX415_Project_Data_model-performance-naive.md *
+* reports/Model_Performance/CSX415_Project_Data_model-performance-linear.md *
+* reports/Model_Performance/CSX415_Project_Data_model-performance-tree.md *
+
+#### MODEL PREDICTION REPORTS
+* reports/Model_Performance/CSX415_Project_Data_model-prediction-naive.md *
+* reports/Model_Performance/CSX415_Project_Data_model-prediction-linear.md *
+* reports/Model_Performance/CSX415_Project_Data_model-prediction-tree.md *
+
+### Instructions
+#### Deployment instructions
+* deploy/CSX415_Project_Deploy_instructions.md *
+
+#### Deployment code
+* deploy/src *
+
+#### Maintainence Code
+* maintain/src *
+
+#### Maintainence instructions 
+* maintain/CSX415_Project_Deploy_maintian.md *
 
