@@ -27,6 +27,12 @@ source('src/CSX415_Project_ExploratoryDataAnalysis.R')
 ```
 
 ```{r Modelling}
+a <- createDataPartition(delaysdb$AIRLINE, p = 0.8, list=FALSE)
+TrainData    <- delaysdb[a,2:16]
+TrainClasses <- delaysdb[a,1]
+TestData     <- delaysdb[-a,2:10]
+TestClasses  <- delaysdb[-a,1]
+
 # Naive model
 source('src/models/CSX415_Project_Data_Model_Naive.R')
        

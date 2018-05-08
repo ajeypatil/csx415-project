@@ -2,7 +2,7 @@ delaysagg <- aggregate(delaysdb$AIRLINE_DELAY, by=list(delaysdb$AIRLINE), FUN=su
 delaysagg <- delaysagg[order(-delaysagg$x),]
 delaysagg <- plyr::rename(delaysagg,c("Group.1"="IATA_CODE","x"="Total Delays"))
 
-cancellationsagg <- aggregate(cancellationsdb$CANCELLED, by=list(delaysdb$AIRLINE), FUN=sum )
+cancellationsagg <- aggregate(cancellationsdb$CANCELLED, by=list(cancellationsdb$AIRLINE), FUN=sum )
 cancellationsagg <- cancellationsagg[order(-cancellationsagg$x),]
 cancellationsagg <- plyr::rename(cancellationsagg,c("Group.1"="IATA_CODE","x"="Total Cancellations"))
 
