@@ -1,0 +1,39 @@
+---
+title: "CSX415_Project_airline_performance"
+author: "Ajey Patil"
+date: "5/7/2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+```{r load project}
+currdir <- getwd()
+library(ProjectTemplate)
+load.project()
+```
+
+## Data Cleaning done while munging in load.project
+
+```{r Perform Exploratory Data Analysis : graphs stored in graph directory}
+source('src/CSX415_Project_ExploratoryDataAnalysis.R')
+```
+
+```{r Modelling}
+# Naive model
+source('src/models/CSX415_Project_Data_Model_Naive.R')
+       
+# Linear model
+source('src/models/CSX415_Project_Data_Model_Linear.R')
+
+# Random Forest
+source('src/models/CSX415_Project_Data_Model_Tree.R')
+
+# Generialised Linear Model
+source('src/models/CSX415_Project_Data_Model_glmnet.R')
+
+```
