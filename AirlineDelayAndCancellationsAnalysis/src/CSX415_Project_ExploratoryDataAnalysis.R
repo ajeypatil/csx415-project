@@ -9,6 +9,7 @@ cancellationsagg <- plyr::rename(cancellationsagg,c("Group.1"="IATA_CODE","x"="T
 flights['FLIGHT_INSTANCE'] <- 1
 allflights <- aggregate(flights$FLIGHT_INSTANCE, by=list(flights$AIRLINE), FUN=sum )
 
+
 allflights <- plyr::rename(allflights, c("Group.1"="IATA_CODE","x"="NumFlights"))
 alldelays = merge(x=allflights, y=delaysagg, by="IATA_CODE",all=TRUE)
 alldelays$AVERAGE_DELAY <- (alldelays$`Total Delays` * 1.0) / alldelays$NumFlights

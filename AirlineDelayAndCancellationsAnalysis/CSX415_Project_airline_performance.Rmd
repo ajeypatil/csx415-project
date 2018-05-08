@@ -42,6 +42,7 @@ preProcessDb <- preProcess(delaysdb, method=c("medianImpute","nzv","center", "sc
 delaysdb <- predict(preProcessDb,delaysdb)
 delaysdb <- delaysdb[sample(nrow(delaysdb)),]
 
+
 a <- createDataPartition(delaysdb$AIRLINE, p = 0.8, list=FALSE)
 TrainData    <- delaysdb[a,]
 TestData     <- delaysdb[-a,]

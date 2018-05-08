@@ -7,3 +7,4 @@ cancellationsdb <- subset(flights,select = c('AIRLINE','MONTH','DAY','DAY_OF_WEE
 cancellationsdb[is.na(cancellationsdb)] <- 0
 cancellationsdb['flight_instance'] <- 1
 cancellationsdb <- cancellationsdb[cancellationsdb['CANCELLED']!=0,]
+
