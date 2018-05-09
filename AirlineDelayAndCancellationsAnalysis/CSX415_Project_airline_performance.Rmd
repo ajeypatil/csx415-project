@@ -62,9 +62,9 @@ TestData     <- delaysdb[-b,]
 source('src/models/CSX415_Project_Data_Model_Linear.R')
 
 # Tree
-#source('src/models/CSX415_Project_Data_Model_Tree.R')
+source('src/models/CSX415_Project_Data_Model_Tree.R')
 
 # Generialised Linear Model
-#source('src/models/CSX415_Project_Data_Model_glmnet.R')
+source('src/models/CSX415_Project_Data_Model_glmnet.R')
 
 ```

@@ -1,9 +1,7 @@
-random_forest.model = train(TrainData$AIRLINE_DELAY ~ .,
-                          data=TrainData, method='ranger',
-                          trControl=trainControl(method='cv',number=2))
+tree.model <- rpart(TrainData$AIRLINE_DELAY ~ ., data=TrainData)
 
-random_forest.model
+tree.model
 
-predictions <- predict(random_forest.model,TestData)
+predictions <- predict(tree.model,TestData)
 
-random_forest_model_error <- rmse(TestData$AIRLINE_DELAY,predictions)
+tree_model_error <- rmse(TestData$AIRLINE_DELAY,predictions)

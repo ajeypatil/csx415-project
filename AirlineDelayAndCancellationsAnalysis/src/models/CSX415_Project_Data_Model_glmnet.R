@@ -1,9 +1,13 @@
-glm_net.model = train(TrainData$AIRLINE_DELAY ~ .,
-                          data=TrainData, method='glmnet',metric='ROC',
-                          trControl=trainControl(method='cv',number=2))
+Tr_x <- as.data.frame(TrainData[,1:(ncol(TrainData)-1)])
+Tr_x <- model.matrix(~.,data=Tr_x)
+Tr_y <- TrainData[,ncol(TrainData)]
+glm_net.model <- cv.glmnet(Tr_x, Tr_y)
 
 glm_net.model
 
-predictions <- predict(glm_net.model,TestData)
+Tst_x <- as.data.frame(TestData[,1:(ncol(TrainData)-1)])
+Tst_x <- model.matrix(~.,data=Tst_x)
+Tst_y <- TrainData[,ncol(TrainData)]
+predictions <- predict(glm_net.model,Tst_x)
 
-glm_net_model_error <- rmse(TestData$AIRLINE_DELAY,predictions)
+glm_net_error <- rmse(TestData$AIRLINE_DELAY,predictions)
