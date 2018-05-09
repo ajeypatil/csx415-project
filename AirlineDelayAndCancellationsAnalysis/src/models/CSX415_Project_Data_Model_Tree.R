@@ -1,11 +1,9 @@
-random_forest.model = train(TrainData$AIRLINE ~ .,
+random_forest.model = train(TrainData$AIRLINE_DELAY ~ .,
                           data=TrainData, method='ranger',
                           trControl=trainControl(method='cv',number=2))
 
 random_forest.model
 
-predictions_classes <- predict(random_forest.model$finalModel,TestData)
+predictions <- predict(random_forest.model,TestData)
 
-random_forest_model_error <- (predictions_classes != TestData$AIRLINE)
-
-random_forest_confusionMatrix <- confusionMatrix(predictions_classes, TestData$AIRLINE)
+random_forest_model_error <- rmse(TestData$AIRLINE_DELAY,predictions)

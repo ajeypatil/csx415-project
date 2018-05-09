@@ -1,11 +1,8 @@
-linear.model = train(TrainData$AIRLINE ~ .,
-                          data=TrainData, method='lm',
-                          trControl=trainControl(method='cv',number=2))
+
+linear.model = lm(TrainData$AIRLINE_DELAY ~ ., data=TrainData)
 
 linear.model
 
-predictions_classes <- predict(linear.model$finalModel,TestData)
+predictions <- predict(linear.model,TestData)
 
-linear_model_error <- (predictions_classes != TestData$AIRLINE)
-
-linearmodel_confusionMatrix <- confusionMatrix(predictions_classes, TestData$AIRLINE)
+linear_model_error <- rmse(TestData$AIRLINE_DELAY, predictions)
