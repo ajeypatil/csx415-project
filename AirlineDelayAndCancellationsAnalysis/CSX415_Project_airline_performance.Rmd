@@ -28,43 +28,40 @@ library(rmse)
 #### graphs stored in graph directory
 
 ```{r Perform Exploratory Data Analysis : graphs stored in graph directory}
-source('src/CSX415_Project_ExploratoryDataAnalysis.R')
+source('src/01-EDA/CSX415_Project_ExploratoryDataAnalysis.R')
 rm(cancellationsdb)
 rm(flights)
 rm(allcancellations)
 rm(alldelays)
 rm(cancellationsagg)
 ```
-## Modelling
-#### PreProcess Data
+## PreProcess Data
 #### Remove zero variance columns
 #### Test-Train split
-#### Apply Model
-
-```{r Modelling}
-# Convert to categorial variable
-delaysdb$AIRLINE <- factor(delaysdb$AIRLINE) 
-
-preProcessDb <- preProcess(delaysdb, method=c("medianImpute","nzv","center", "scale"))
-delaysdb <- predict(preProcessDb,delaysdb)
-
-delaysdb <- delaysdb[sample(nrow(delaysdb)),]
-
-b <- createDataPartition(delaysdb$AIRLINE_DELAY, p = 0.8, list=FALSE)
-TrainData    <- delaysdb[b,]
-TestData     <- delaysdb[-b,]
-
-# Naive Bayes model
-# This model cannot be used for regression
-# source('src/models/CSX415_Project_Data_Model_Naive.R')
-       
-# Linear model
-source('src/models/CSX415_Project_Data_Model_Linear.R')
-
-# Tree
-source('src/models/CSX415_Project_Data_Model_Tree.R')
-
-# Generialised Linear Model
-source('src/models/CSX415_Project_Data_Model_glmnet.R')
-
+```{r preprocess}
+source('src/02-PREPROCESS/CSX415_Project_preprocess.R')
 ```
+
+## Modelling
+#### Apply Model
+```{r Modelling}
+ Naive Bayes model
+# This model cannot be used for regression
+# source('src/03-MODELS/CSX415_Project_Data_Model_Naive.R')
+```
+
+### Linear model
+```{r lm}       
+source('src/03-MODELS/CSX415_Project_Data_Model_Linear.R')
+```
+
+### Tree
+```{r rpart}       
+source('src/03-MODELS/CSX415_Project_Data_Model_Tree.R')
+```
+
+### Generialised Linear Model
+```{r rpart}       
+source('src/03-MODELS/CSX415_Project_Data_Model_glmnet.R')
+```
+

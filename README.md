@@ -13,3 +13,6 @@ The project analyzes flight data from The U.S. Department of Transportation's (D
   Rmarkdown for complete analysis:  
   csx415-project/AirlineDelayAndCancellationsAnalysis/CSX415_Project_airline_performance.Rmd
 
+## Deployment Package
+   tarball in csx415-project/packrat/bundles
+

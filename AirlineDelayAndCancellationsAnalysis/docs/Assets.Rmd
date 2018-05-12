@@ -28,20 +28,26 @@ This source contains hourly weather data at various airports.
 
 ## Code
 
-### Data Wrangling
-* src/CSX415_Project_Data_Wrangling.R *
-
-###  Working model
-* src/models *
-* src/models/CSX415_Project_Data_Model_Naive.R *
-* src/models/CSX415_Project_Data_Model_Linear.R *
-* src/models/CSX415_Project_Data_Model_Tree.R *
-
 ###  Running code
 * src *
 
+### Exploratory Data Analysis 
+* src/01-EDA/CSX415_Project_ExploratoryDataAnalysis.R *
+
+### Data PreProcess
+* src/02-PREPROCESS/CSX415_Project_preprocess.R *
+
+###  Working models
+* src/03-MODELS *
+* src/03-MODELS/CSX415_Project_Data_Model_Linear.R *
+* src/03-MODELS/CSX415_Project_Data_Model_Tree.R *
+* src/03-MODELS/CSX415_Project_Data_Model_glmnet.R *
+
 ###  Code dependendcies
 * lib *
+
+### Pkgs
+* pkgs/rmse *
 
 ## Outputs
 ### Performance report
