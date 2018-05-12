@@ -39,16 +39,11 @@ rm(cancellationsagg)
 #### Remove zero variance columns
 #### Test-Train split
 ```{r preprocess}
-source('src/02-PREPROCESS/CSX415_Project_preprocess.R')
+source('src/02-PREPROCESS/CSX415_Project_process.R')
 ```
 
 ## Modelling
 #### Apply Model
-```{r Modelling}
- Naive Bayes model
-# This model cannot be used for regression
-# source('src/03-MODELS/CSX415_Project_Data_Model_Naive.R')
-```
 
 ### Linear model
 ```{r lm}       
