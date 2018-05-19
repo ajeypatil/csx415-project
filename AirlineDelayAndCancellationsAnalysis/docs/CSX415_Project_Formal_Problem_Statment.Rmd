@@ -18,51 +18,36 @@ output:
 
 # Objective
 
-*The Objective of this project is to analyze Flight Delay and Cancellations  for US Airlines and determine best airline for least flight delays and cancellations on the 100 busiest routes in country*
+*The Objective of this project is to analyze Flight Delay and Cancellations  for US Airlines and predict flight delays and cancellations *
 
-The project analyzes flight data from The U.S. Department of Transportation's (DOT) Bureau of Transportation Statistics and predicts Airline Performance based on target variables of cancelled number of flights and
-average flight delays ( which is not due to airport, weather, security or air system delays) and when delays
-are only due to airline delays.
+The project analyzes flight data from The U.S. Department of Transportation's (DOT) Bureau of Transportation Statistics and predicts flight delays greater than 60 minutes or cancellations based on origin airport, destination airport, day, month of year, time of depature and airline.
 
 # Overview
 
-When multiple airlines are available in metro area, then residents have choice of airline. An analysis of airlines performance   in terms of flight delay and cancellation is required for passengers to choose an airline with least cancelations and delays on the 100 busiest routes in country.
+When multiple airlines are available in metro area, then residents have choice of airline. An analysis of airlines performance   in terms of flight delay and cancellation is required for passengers to choose an airline with least cancelations and delays.
 
-Decision Prediction
-The predictions of best airline of choice in US would be made based on how busiest airline is in terms
-of number of flights and relative delays and cancellations per flight and 100 busiest routes would
-be selected based on sorted (unique airport of source and destination) list of flights between 2 airports.
+## Analysis and Decision Prediction
+The analysis of delay and cancellations would be made based on the following predictors
 
 ## Descriptions of Variables
 
     -------------------------------------------------------------
     | Variable Description  |   Type      |  Variable Category  |
     -------------------------------------------------------------
-    |  Airline              |  Target     |  Categorical        |
-    |  Dep Date             |  Predictor  |  Ordinal
-    |  Dep Time             |  Predictor  |  Continuous         |
-    |  Air Time             |  Predictor  |  Continuous         |
-    |  Distance             |  Predictor  |  Continuous         |
-    |  Arrival Delay        |  Predictor  |  Continuous         |
-    |  Weather Delay        |  Predictor  |  Continuous         |
-    |  Weather Condition    |  Predictor  |  Ordinal            |
-    |  Security Delay       |  Predictor  |  Continuous         |
-    |  Air System Delay     |  Predictor  |  Continuous         |
-    |  Late Aircraft Delay  |  Predictor  |  Continuous         |
-    |  Cancellations        |  Target     |  Continuous         |
-    |  Airline Delay        |  Target     |  Continuous         |
+    |  Airline              |  Predictor  |  Categorical        |
+    |  Departure Time       |  Predictor  |  Continuous         |
+    |  Dep Day of Week      |  Predictor  |  Discrete		|
+    |  Departure Month      |  Predictor  |  Discrete		|
+    |  Origin Airport       |  Predictor  |  Categorial         |
+    |  Destination Airport  |  Predictor  |  Categorial         | 
+    |  Cancellations        |  Target     |  Boolean		|
+    |  Airline Delay > 60min|  Target     |  Boolean		|
     -------------------------------------------------------------
     
 # Data Sources
 
 ## Flight Data
 The U.S. Department of Transportation's (DOT) Bureau of Transportation Statistics tracks the on-time performance of domestic flights operated by large air carriers. Summary information on the number of on-time, delayed, canceled, and diverted flights is published in DOT's monthly Air Travel Consumer Report and in this dataset of 2015 flight delays and cancellations. https://www.kaggle.com/usdot/flight-delays/data
-
-## Weather Data
-The weather data is obtained from Hourly land-based weather observations from NOAA at
-https://www.ncdc.noaa.gov/orders/qclcd/,
-This source contains hourly weather data at various airports.
-
 
 # Key Roles
 ## Model Creation
@@ -84,7 +69,8 @@ an airline based on past performance.
 
 
 # Deliverables
-The deliverables for this project will include a report of all the findings, r code, all of which will be published on GitHub.
+The deliverables for this project will include an application running in Rscript
+that predicts Airline delay or cancellation based on input predictors
 
 Specific analysis to be done and questions to be explored
 
@@ -96,8 +82,9 @@ Specific analysis to be done and questions to be explored
 
     Chart of Category the delay reason for flights for airline and numbers of delays per delay reason
 
-    Based on predictor variables mentioned in table above, 
-    predict best airline for minimum flight delay and cancellations.
+    Based on predictor variables mentioned in table above,
+ 
+    Application to predict airline delay greater than 60 min and cancellations.
 
 # Success Criteria
 
@@ -113,7 +100,7 @@ per airline is measurable and is expected to reduce 10% year-over-year
 
 Model Analysis Success Metric:
 The model analysis and prediction should predict airline delays and cancellations
-with accuracy greater than 75% and ROC(AUC) greater than 0.65
+with accuracy greater than 60% and ROC(AUC) greater than 0.65
 
 # Risks
 
@@ -121,7 +108,7 @@ with accuracy greater than 75% and ROC(AUC) greater than 0.65
 
 2. Project Risks: Airlines cannot improve improve delays and cancellations year-over-year
 
-3. Prediction Risks: Model Analysis and Prediction cannot predict with accuracy greater than 75% and 
+3. Prediction Risks: Model Analysis and Prediction cannot predict with accuracy greater than 60% and 
   ROC(AUC) greater than 0.65 then more data is needed
   
 # Deployment Phases
@@ -130,25 +117,26 @@ Initial Analysis Phase: R-code for preliminary analysis of data
 
 Initial Prediction Phase: R-code for preliminary prediction of deliverables
 
-Final Model Deployment Phase: R-code to generate reports for yearly data
+Final Model Deployment Phase: R-application to predict delays and cancellations
 
 Deployment to Airline Passengers Impact:
-This model would be deployed to all airline passengers as yearly report
-and they can make choice of airline for up-coming year based on report.
+The final application would be deployed to all airline passengers 
+on a yearly basis.
 
 Risks of Deployment:
-The deployment of model as yearly report may be rejected by airline
+The deployment of model as application may be rejected by airline
 and hence analysis performed must be made public to airlines which
-can then verify the scientific analysis of the data.
+can then verify the scientific basis for analysis.
 
 # Timeline of Project
 
 1. Data Availablity: Yearly data made available The U.S. Department of 
 Transportation's (DOT) Bureau of Transport Statistics
 
-2. Prediction Report Availability : One month after yearly data is made available
+2. Prediction Application Availability : One month after yearly data is made available
 
-3. Effort Required for Predictions : One man-month
+3. Effort Required for Intial Model Development : One man-month
+   Effort Required for Yearly model retraining and application deployment : One man-month
 
 # Costs
 

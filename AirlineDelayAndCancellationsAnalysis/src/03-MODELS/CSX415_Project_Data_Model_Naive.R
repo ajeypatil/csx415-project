@@ -1,10 +1,7 @@
 
-naive_bayes.model = train(TrainData$AIRLINE_DELAY ~ .,
-  data=TrainData, method='nb',
-  trControl=trainControl(method='cv',number=2))
+#nb.model = naiveBayes(TrainData$DelayedOrCancelled ~ .,data=TrainData)
+nb.model = naive_bayes(TrainData$DelayedOrCancelled ~ .,data=TrainData)
 
-naive_bayes.model
+saveRDS(nb.model,file="flights_naivebayes_model.rds")
 
-predictions <- predict(naive_bayes.model,TestData)
-
-naive_bayes_model_error <- rmse(TestData$AIRLINE_DELAY,predictions)
+nb_predictions <- predict(nb.model,TestData)

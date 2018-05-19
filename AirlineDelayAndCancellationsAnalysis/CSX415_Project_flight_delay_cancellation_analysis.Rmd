@@ -1,0 +1,103 @@
+---
+title: "CSX415_Project_flight_delay_cancellation_analysis"
+author: "Ajey Patil"
+date: "5/7/2018"
+output: html_document
+---
+
+## R Markdown
+### Data Cleaning done in load.project() data munging
+
+```{r, message=F, warning=F}
+#currdir <- getwd()
+#install.packages('ProjectTemplate')
+library(ProjectTemplate)
+load.project()
+```
+
+```{r setup, include=FALSE, echo=FALSE}
+knitr::opts_chunk$set(echo=TRUE)
+```
+
+## Install Packages
+
+```{r install packages}
+#Example package for RMSE calculation in Regression Analysis
+#devtools::install_github("ajeypatil/rmse")
+#library(rmse)
+```
+
+## Perform Exploratory Data Analysis
+#### graphs stored in graph directory
+
+```{r Perform Exploratory Data Analysis : graphs stored in graph directory}
+source('src/01-EDA/CSX415_Project_ExploratoryDataAnalysis.R')
+```
+## PreProcess Data
+#### Remove zero variance columns
+#### Test-Train split
+```{r preprocess}
+source('src/02-PREPROCESS/CSX415_Project_process.R')
+```
+
+## Modelling
+#### Apply Model
+
+### Naive Bayes
+```{r naive bayes}
+source('src/03-MODELS/CSX415_Project_Data_Model_Naive.R')
+#nb.model
+#summary(nb.model)
+plot(nb.model)
+```
+
+### Logistic Regression model
+```{r glm}       
+# Logistic Regression model for flights data takes more than 10 hours
+# to train, the trained model is saved but is 3.9 Gb in size (.rds)
+# Also the ROC calculated is only 0.592, hence not using this model
+#source('src/03-MODELS/CSX415_Project_Data_Model_LogisticRegression.R')
+#glm.model
+#summary(glm.model)
+#plot.roc(TestData$DelayedOrCancelled,glm_predictions,print.auc=TRUE,main="GLM Model ROC")
+```
+
+### Tree
+```{r rpart}       
+source('src/03-MODELS/CSX415_Project_Data_Model_Tree.R')
+#tree.model
+#summary(tree.model)
+#plot(tree.model)
+plot.roc(TestData$DelayedOrCancelled,tr_predictions[,2],print.auc=TRUE,main="Tree Model ROC")
+```
+
+## Model Evaluation
+### Naive Bayes Model Evaluation
+
+```{r model Naive Bayes evaluation}
+confusionMatrix(TestData$DelayedOrCancelled,nb_predictions)
+```
+
+
+### Tree Model Evaluation
+
+```{r Tree Model evaluation}
+tr_pred <- ifelse((tr_predictions[,2]>0.8), 1,0)
+confusionMatrix(TestData$DelayedOrCancelled,tr_pred)
+```
+
+## Model Selection
+### Tree Model is more accurate and ROC is greater than 0.75 as required
+### compared to Naive Bayes model.
+### .
+### Logistic Regression model takes long time to train and ROC is less
+### than 0.65 hence not selecting Logistic Regression model also because
+### saved model .rds is 3.9 Gb in size hence not suitable for deloyment
+### .
+### Comparing the metrics, the accuracy and Kappa values of Tree Model
+### are greater than Naive Bayes Model
+### .
+### Conclusion: Tree Model satisfies the requirements criteria of 
+### accuracy greater than 70% and ROC(AUC) greater than 0.65 and hence
+### used for deployment
+

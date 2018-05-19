@@ -7,8 +7,8 @@ output: html_document
 
 # Assets for Airline Flight Delays And Cancellations Analysis
 
-## Performance Analysis (complete run)
-* CSX415_Project_airline_performance.Rmd *
+## Analysis (complete run)
+* CSX415_Project_flight_delay_cancellation_analysis.Rmd *
 
 ## Input
 ### FORMAL PROBLEM STATEMENT
@@ -22,10 +22,6 @@ https://www.kaggle.com/usdot/flight-delays/data
 * Airlines database : airlines.csv *
 * Airports database : airports.csv *
 
-#### Weather Data
-https://www.ncdc.noaa.gov/orders/qclcd/,
-This source contains hourly weather data at various airports.
-
 ## Code
 
 ###  Running code
@@ -35,13 +31,13 @@ This source contains hourly weather data at various airports.
 * src/01-EDA/CSX415_Project_ExploratoryDataAnalysis.R *
 
 ### Data PreProcess
-* src/02-PREPROCESS/CSX415_Project_preprocess.R *
+* src/02-PREPROCESS/CSX415_Project_process.R *
 
 ###  Working models
 * src/03-MODELS *
-* src/03-MODELS/CSX415_Project_Data_Model_Linear.R *
+* src/03-MODELS/CSX415_Project_Data_Model_Naive.R *
+* src/03-MODELS/CSX415_Project_Data_Model_LogisticRegression.R *
 * src/03-MODELS/CSX415_Project_Data_Model_Tree.R *
-* src/03-MODELS/CSX415_Project_Data_Model_glmnet.R *
 
 ###  Code dependendcies
 * lib *
@@ -50,32 +46,24 @@ This source contains hourly weather data at various airports.
 * pkgs/rmse *
 
 ## Outputs
-### Performance report
-* reports/CSX415_Project_Airline_performance_report.md *
+### Analysis report
+* reports/CSX415_Project_flight_delay_cancellation_analysis.pdf *
+* reports/CSX415_Project_flight_delay_cancellation_analysis.html *
 
 ### Observations
-* reports/CSX415_Project_Modelling_Analysis_Obervations.md *
 * graphs/CSX415_Project_Data_visualizations *
 
-#### MODEL PERFORMANCE EVALS
-* reports/Model_Performance/CSX415_Project_Data_model-performance-naive.md *
-* reports/Model_Performance/CSX415_Project_Data_model-performance-linear.md *
-* reports/Model_Performance/CSX415_Project_Data_model-performance-tree.md *
-
-#### MODEL PREDICTION REPORTS
-* reports/Model_Performance/CSX415_Project_Data_model-prediction-naive.md *
-* reports/Model_Performance/CSX415_Project_Data_model-prediction-linear.md *
-* reports/Model_Performance/CSX415_Project_Data_model-prediction-tree.md *
+## Model Deployment
 
 ### Instructions
 #### Deployment instructions
 * deploy/CSX415_Project_Deploy_instructions.md *
 
 #### Deployment code
-* deploy/src *
+* deploy/app *
 
-#### Maintainence Code
-* maintain/src *
+#### Maintainence Code and Yearly Training
+* CSX415_Project_flight_delay_cancellation_analysis.Rmd *
 
 #### Maintainence instructions 
 * maintain/CSX415_Project_Deploy_maintian.md *

@@ -1,7 +1,8 @@
-tree.model <- rpart(TrainData$AIRLINE_DELAY ~ ., data=TrainData)
+tree.model <- rpart(TrainData$DelayedOrCancelled ~ ., data=TrainData,
+            control=rpart.control(minsplit=2, minbucket=1, cp=0.00001))
 
-tree.model
+tr_predictions <- predict(tree.model,TestData)
 
-predictions <- predict(tree.model,TestData)
+saveRDS(tree.model,file="flights_tree_model.rds")
 
-tree_model_error <- rmse(TestData$AIRLINE_DELAY,predictions)
+
