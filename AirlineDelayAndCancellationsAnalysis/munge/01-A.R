@@ -20,7 +20,7 @@ DelaysAndCancellationsNo['DelayedOrCancelled'] <- 0
 DelaysAndCancellationsNo <- DelaysAndCancellationsNo[sample(nrow(DelaysAndCancellationsNo), size=nrow(DelaysAndCancellationsYes), replace = TRUE),]
 DelaysAndCancellations <- rbind(DelaysAndCancellationsYes, DelaysAndCancellationsNo)
 DelaysAndCancellations <- DelaysAndCancellations[sample(nrow(DelaysAndCancellations)),]
-write.csv(DelaysAndCancellations,file="flights_summary.csv",row.names = FALSE)
+#write.csv(DelaysAndCancellations,file="flights_summary.csv",row.names = FALSE)
 rm(DelaysAndCancellationsNo)
 rm(DelaysAndCancellationsYes)
 DelaysAndCancellations['CANCELLED'] <- NULL
