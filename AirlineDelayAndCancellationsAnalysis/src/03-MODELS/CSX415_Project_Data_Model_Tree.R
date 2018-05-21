@@ -3,6 +3,6 @@ tree.model <- rpart(TrainData$DelayedOrCancelled ~ ., data=TrainData,
 
 tr_predictions <- predict(tree.model,TestData)
 
-saveRDS(tree.model,file="flights_tree_model.rds")
+saveRDS(tree.model,file="lib/models/flights_tree_model.rds")
 
 

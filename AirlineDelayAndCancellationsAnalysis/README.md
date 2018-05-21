@@ -11,8 +11,9 @@ The project analyzes flight data from The U.S. Department of Transportation's (D
 
 ## Performance Analysis (complete run)
   Rmarkdown for complete analysis:  
-  csx415-project/AirlineDelayAndCancellationsAnalysis/CSX415_Project_airline_performance.Rmd
+  csx415-project/AirlineDelayAndCancellationsAnalysis/CSX415_Project_flight_delay_cancellation_analysis.Rmd
 
 ## Deployment Package
-   tarball in csx415-project/packrat/bundles
+   Deploy Tarball: csx415-project/deploy/app/packrat/bundles
+   Deploy App: csx415-project/deploy/app/predictFlightDelayCancellation.R 
 

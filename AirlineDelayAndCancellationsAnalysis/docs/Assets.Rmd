@@ -59,8 +59,12 @@ https://www.kaggle.com/usdot/flight-delays/data
 #### Deployment instructions
 * deploy/CSX415_Project_Deploy_instructions.md *
 
-#### Deployment code
+#### Deployment Application
 * deploy/app *
+
+#### Deployment Package
+   Deploy Tarball: csx415-project/deploy/app/packrat/bundles
+   Deploy App: csx415-project/deploy/app/predictFlightDelayCancellation.R
 
 #### Maintainence Code and Yearly Training
 * CSX415_Project_flight_delay_cancellation_analysis.Rmd *

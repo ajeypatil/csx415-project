@@ -83,7 +83,7 @@ confusionMatrix(TestData$DelayedOrCancelled,nb_predictions)
 
 ```{r Tree Model evaluation}
 tr_pred <- ifelse((tr_predictions[,2]>0.8), 1,0)
-confusionMatrix(TestData$DelayedOrCancelled,as.factor(tr_pred))
+confusionMatrix(TestData$DelayedOrCancelled,tr_pred)
 ```
 
 ## Model Selection

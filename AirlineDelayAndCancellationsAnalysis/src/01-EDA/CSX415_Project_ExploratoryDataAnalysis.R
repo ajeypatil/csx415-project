@@ -25,11 +25,12 @@ ggplot(alldelays, aes(x=IATA_CODE, y=AVERAGE_DELAY)) + geom_bar(stat='identity')
 ggplot(allcancellations, aes(x=IATA_CODE, y=AVERAGE_CANCELLATIONS)) + geom_bar(stat='identity') +
   ggsave(file.path('graphs/CSX415_Project_Data_visualizations','average_cancellations.bar.pdf'))
 
-#rm(cancellationsdb)
-#rm(flights)
+rm(cancellationsdb)
+rm(flights)
 rm(allcancellations)
 rm(alldelays)
 rm(cancellationsagg)
-#rm(delaysdb)
+rm(delaysdb)
+rm(cancellationsdb)
 
 
