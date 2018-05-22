@@ -74,13 +74,9 @@ that predicts Airline delay or cancellation based on input predictors
 
 Specific analysis to be done and questions to be explored
 
-    Chart of all airlines and number of flights cancelled per day of week.
+    Chart of all airlines and number of flights cancelled.
 
-    Chart of all airlines and number of flights average delays per day of week.
-
-    Chart of average delay time and all airlines and day of week.
-
-    Chart of Category the delay reason for flights for airline and numbers of delays per delay reason
+    Chart of all airlines and number of flights average delays.
 
     Based on predictor variables mentioned in table above,
  
@@ -100,7 +96,7 @@ per airline is measurable and is expected to reduce 10% year-over-year
 
 Model Analysis Success Metric:
 The model analysis and prediction should predict airline delays and cancellations
-with accuracy greater than 60% and ROC(AUC) greater than 0.65
+with accuracy greater than 70% and ROC(AUC) greater than 0.65
 
 # Risks
 
@@ -108,7 +104,7 @@ with accuracy greater than 60% and ROC(AUC) greater than 0.65
 
 2. Project Risks: Airlines cannot improve improve delays and cancellations year-over-year
 
-3. Prediction Risks: Model Analysis and Prediction cannot predict with accuracy greater than 60% and 
+3. Prediction Risks: Model Analysis and Prediction cannot predict with accuracy greater than 70% and 
   ROC(AUC) greater than 0.65 then more data is needed
   
 # Deployment Phases
@@ -130,7 +126,7 @@ can then verify the scientific basis for analysis.
 
 # Timeline of Project
 
-1. Data Availablity: Yearly data made available The U.S. Department of 
+1. Data Availablity: Yearly data made available by The U.S. Department of 
 Transportation's (DOT) Bureau of Transport Statistics
 
 2. Prediction Application Availability : One month after yearly data is made available

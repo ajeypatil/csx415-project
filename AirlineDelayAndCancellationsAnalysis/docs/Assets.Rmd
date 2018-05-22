@@ -70,5 +70,5 @@ https://www.kaggle.com/usdot/flight-delays/data
 * CSX415_Project_flight_delay_cancellation_analysis.Rmd *
 
 #### Maintainence instructions 
-* maintain/CSX415_Project_Deploy_maintian.md *
+* maintain/CSX415_Project_Deploy_maintain.md *
 
