@@ -7,11 +7,17 @@
 #      --origin "SJC" --destination "DEN" --month 10
 #      --day_of_week 5 --time 1500
 
-library(devtools)
-library(optigrab)
-library(magrittr)
-devtools::install_github("ajeypatil/flights")
-library(flights)
+invisible(library(devtools))
+invisible(library(optigrab))
+invisible(library(magrittr))
+
+# defining a function
+is.installed <- function(mypkg) is.element(mypkg, installed.packages()[,1]) 
+
+if (!is.installed("flights")){
+    invisible(devtools::install_github("ajeypatil/flights"))
+}
+invisible(library(flights))
 
 airline <- opt_get("airline",required=TRUE,description="AIRLINE IATA_CODE")
 origin_airport <- opt_get("origin",required=TRUE,description="ORIGIN AIRPORT IATA_CODE")
