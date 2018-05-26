@@ -2,7 +2,8 @@
 title: "CSX415_Project_flight_delay_cancellation_analysis"
 author: "Ajey Patil"
 date: "5/7/2018"
-output: html_document
+output:
+  html_document: default
 ---
 
 ## R Markdown
@@ -15,9 +16,9 @@ library(ProjectTemplate)
 load.project()
 ```
 
-```{r setup, include=FALSE, echo=FALSE}
-knitr::opts_chunk$set(echo=TRUE)
-```
+#```{r setup, include=FALSE, echo=FALSE}
+#knitr::opts_chunk$set(echo=TRUE)
+#```
 
 ## Install Packages
 
@@ -49,6 +50,11 @@ source('src/03-MODELS/CSX415_Project_Data_Model_Naive.R')
 #nb.model
 #summary(nb.model)
 plot(nb.model)
+```
+
+### Naive Bayes Model ROC plot
+```{r naive bayes roc plot}
+plot.roc(TestData$DelayedOrCancelled,nb_pred_prob[,2],print.auc=TRUE,main="Naive Bayes Model ROC")
 ```
 
 ### Logistic Regression model
