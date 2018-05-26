@@ -3,6 +3,8 @@
 DelaysAndCancellations$AIRLINE <- factor(DelaysAndCancellations$AIRLINE)
 DelaysAndCancellations$ORIGIN_AIRPORT <- factor(DelaysAndCancellations$ORIGIN_AIRPORT)
 DelaysAndCancellations$DESTINATION_AIRPORT <- factor(DelaysAndCancellations$DESTINATION_AIRPORT)
+DelaysAndCancellations$MONTH <- factor(DelaysAndCancellations$MONTH)
+DelaysAndCancellations$DAY_OF_WEEK <- factor(DelaysAndCancellations$DAY_OF_WEEK)
 DelaysAndCancellations$DelayedOrCancelled <- factor(DelaysAndCancellations$DelayedOrCancelled)
 #preProcessDb <- preProcess(DelaysAndCancellations, method=c("medianImpute","nzv"))
 preProcessDb <- preProcess(DelaysAndCancellations, method=c("medianImpute"))
