@@ -7,12 +7,21 @@
 #      --origin "SJC" --destination "DEN" --month 10
 #      --day_of_week 5 --time 1500
 
+# defining a function
+is.installed <- function(mypkg) is.element(mypkg, installed.packages()[,1]) 
+
+if (!is.installed("devtools")){
+    invisible(install.packages("devtools"))
+}
+if (!is.installed("optigrab")){
+    invisible(install.packages("optigrab"))
+}
+if (!is.installed("magrittr")){
+    invisible(install.packages("magrittr"))
+}
 invisible(library(devtools))
 invisible(library(optigrab))
 invisible(library(magrittr))
-
-# defining a function
-is.installed <- function(mypkg) is.element(mypkg, installed.packages()[,1]) 
 
 if (!is.installed("flights")){
     invisible(devtools::install_github("ajeypatil/flights"))
