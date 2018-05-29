@@ -39,8 +39,7 @@ ggplot(DelaysAndCancellations,aes(factor(DAY_OF_WEEK),group=DelayedOrCancelled, 
     scale_fill_manual('Dly',values=c("blue","red")) +
     ggsave(file.path('graphs/CSX415_Project_Data_visualizations','cancellations_per_day_of_week.png'))
 
-DlyCnclDb <- DelaysAndCancellations[DelaysAndCancellations$DEPARTURE_TIME != 0,]
-ggplot(DlyCnclDb,aes(DEPARTURE_TIME,group=DelayedOrCancelled, fill=factor(DelayedOrCancelled))) + geom_histogram() +
+ggplot(DelaysAndCancellations,aes(SCHEDULED_DEPARTURE,group=DelayedOrCancelled, fill=factor(DelayedOrCancelled))) + geom_histogram() +
     ggtitle("Delayed or Cancellations Per Time of Day") +
     scale_fill_manual('Dly',values=c("blue","red")) +
     ggsave(file.path('graphs/CSX415_Project_Data_visualizations','cancellations_time_of_day.png'))

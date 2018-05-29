@@ -22,6 +22,7 @@ DelaysAndCancellations <- rbind(DelaysAndCancellationsYes, DelaysAndCancellation
 DelaysAndCancellations <- DelaysAndCancellations[sample(nrow(DelaysAndCancellations)),]
 rm(DelaysAndCancellationsNo)
 rm(DelaysAndCancellationsYes)
-DelaysAndCancellations['CANCELLED'] <- NULL
-DelaysAndCancellations['AIRLINE_DELAY'] <- NULL
+write.csv(DelaysAndCancellations,file="~/flights_summ1.csv",row.names = FALSE)
+#DelaysAndCancellations['CANCELLED'] <- NULL
+#DelaysAndCancellations['AIRLINE_DELAY'] <- NULL
 

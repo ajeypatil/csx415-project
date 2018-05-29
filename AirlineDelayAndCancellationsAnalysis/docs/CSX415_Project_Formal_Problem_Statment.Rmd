@@ -96,7 +96,7 @@ per airline is measurable and is expected to reduce 10% year-over-year
 
 Model Analysis Success Metric:
 The model analysis and prediction should predict airline delays and cancellations
-with accuracy greater than 70% and ROC(AUC) greater than 0.65
+with accuracy greater than 60% and ROC(AUC) greater than 0.65
 
 # Risks
 
@@ -104,7 +104,7 @@ with accuracy greater than 70% and ROC(AUC) greater than 0.65
 
 2. Project Risks: Airlines cannot improve improve delays and cancellations year-over-year
 
-3. Prediction Risks: Model Analysis and Prediction cannot predict with accuracy greater than 70% and 
+3. Prediction Risks: Model Analysis and Prediction cannot predict with accuracy greater than 60% and 
   ROC(AUC) greater than 0.65 then more data is needed
   
 # Deployment Phases

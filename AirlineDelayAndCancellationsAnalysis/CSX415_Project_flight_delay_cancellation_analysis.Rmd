@@ -52,7 +52,7 @@ ggplot(DelaysAndCancellations,aes(factor(DAY_OF_WEEK), group=DelayedOrCancelled,
 ```
 
 ```{r plot5}
-ggplot(DlyCnclDb,aes(DEPARTURE_TIME, group=DelayedOrCancelled, fill=factor(DelayedOrCancelled))) +  geom_histogram() + ggtitle("Delayed or Cancellations Per Time of Day")
+ggplot(DelaysAndCancellations,aes(SCHEDULED_DEPARTURE, group=DelayedOrCancelled, fill=factor(DelayedOrCancelled))) +  geom_histogram() + ggtitle("Delayed or Cancellations Per Time of Day")
 ```
 
 ## PreProcess Data
@@ -114,8 +114,7 @@ confusionMatrix(TestData$DelayedOrCancelled,tr_pred)
 ```
 
 ## Model Selection
-### Tree Model is more accurate and ROC is greater than 0.75 as required
-### compared to Naive Bayes model.
+### Tree Model is more accurate and ROC is greater than Naive Bayes model.
 ### .
 ### Logistic Regression model takes long time to train and ROC is less
 ### than 0.65 hence not selecting Logistic Regression model also because
@@ -125,6 +124,6 @@ confusionMatrix(TestData$DelayedOrCancelled,tr_pred)
 ### are greater than Naive Bayes Model
 ### .
 ### Conclusion: Tree Model satisfies the requirements criteria of 
-### accuracy greater than 70% and ROC(AUC) greater than 0.65 and hence
+### accuracy greater than 60% and ROC(AUC) greater than 0.65 and hence
 ### used for deployment
 
