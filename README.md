@@ -1,7 +1,7 @@
 # CSX415 Project : Airline FLight Delays and Cancellation Analysis 
 
 ## Description:
-The project analyzes flight data from The U.S. Department of Transportation's (DOT) Bureau of Transportation Statistics and predicts Flight Delay or Cancellation based on predictor vairables of Airline, Origin Airport, Destination Airport, Month of Travel, Day of Week and Time of day.
+The project analyzes flight data from The U.S. Department of Transportation's (DOT) Bureau of Transportation Statistics and predicts Flight Delay or Cancellation based on predictor vairables of Airline, Origin Airport, Destination Airport, Month of Travel, Day of Week and Scheduled Departure Time.
 
 ## Assets 
 	Described in csx415-project/AirlineDelayAndCancellationsAnalysis/docs/Assets.Rmd
@@ -13,12 +13,7 @@ The project analyzes flight data from The U.S. Department of Transportation's (D
 	Rmarkdown for complete analysis:  
 	  csx415-project/AirlineDelayAndCancellationsAnalysis/CSX415_Project_flight_delay_cancellation_analysis.Rmd
 
-## Analysis Reports
-	csx415-project/AirlineDelayAndCancellationsAnalysis/reports/CSX415_Project_flight_delay_cancellation_analysis.pdf
-
 ## Deployment Package
 	Deploy Tarball: csx415-project/AirlineDelayAndCancellationsAnalysis/deploy/app/packrat/bundles
 	Deploy App: csx415-project/AirlineDelayAndCancellationsAnalysis/deploy/app/predictFlightDelayCancellation.R 
-	Deploy Instructions: csx415-project/AirlineDelayAndCancellationsAnalysis/deploy/CSX415_Project_Deploy_instructions.md
-
 

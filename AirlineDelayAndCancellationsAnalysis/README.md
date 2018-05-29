@@ -1,7 +1,7 @@
 # CSX415 Project : Airline FLight Delays and Cancellation Analysis 
 
 ## Description:
-The project analyzes flight data from The U.S. Department of Transportation's (DOT) Bureau of Transportation Statistics and predicts Flight Delay or Cancellation based on predictor vairables of Airline, Origin Airport, Destination Airport, Month of Travel, Day of Week and Time of day.
+The project analyzes flight data from The U.S. Department of Transportation's (DOT) Bureau of Transportation Statistics and predicts Flight Delay or Cancellation based on predictor vairables of Airline, Origin Airport, Destination Airport, Month of Travel, Day of Week and Scheduled Departure Time.
 
 ## Assets 
 	Described in csx415-project/AirlineDelayAndCancellationsAnalysis/docs/Assets.Rmd

@@ -20,7 +20,7 @@ output:
 
 *The Objective of this project is to analyze Flight Delay and Cancellations  for US Airlines and predict flight delays and cancellations *
 
-The project analyzes flight data from The U.S. Department of Transportation's (DOT) Bureau of Transportation Statistics and predicts flight delays greater than 60 minutes or cancellations based on origin airport, destination airport, day, month of year, time of depature and airline.
+The project analyzes flight data from The U.S. Department of Transportation's (DOT) Bureau of Transportation Statistics and predicts flight delays greater than 60 minutes or cancellations based on origin airport, destination airport, day, month of year, scheduled time of depature and airline.
 
 # Overview
 
@@ -35,13 +35,13 @@ The analysis of delay and cancellations would be made based on the following pre
     | Variable Description  |   Type      |  Variable Category  |
     -------------------------------------------------------------
     |  Airline              |  Predictor  |  Categorical        |
-    |  Departure Time       |  Predictor  |  Continuous         |
-    |  Dep Day of Week      |  Predictor  |  Discrete		|
-    |  Departure Month      |  Predictor  |  Discrete		|
+    |  Scheduled Departure  |  Predictor  |  Continuous         |
+    |  Dep Day of Week      |  Predictor  |  Discrete           |
+    |  Departure Month      |  Predictor  |  Discrete           |
     |  Origin Airport       |  Predictor  |  Categorial         |
     |  Destination Airport  |  Predictor  |  Categorial         | 
-    |  Cancellations        |  Target     |  Boolean		|
-    |  Airline Delay > 60min|  Target     |  Boolean		|
+    |  Cancellations        |  Target     |  Boolean            |
+    |  Airline Delay > 60min|  Target     |  Boolean            |
     -------------------------------------------------------------
     
 # Data Sources
