@@ -20,17 +20,38 @@ allcancellations$AVERAGE_CANCELLATIONS <- (allcancellations$'Total Cancellations
 allcancellations <- allcancellations[order(-allcancellations$AVERAGE_CANCELLATIONS),]
 
 ggplot(alldelays, aes(x=IATA_CODE, y=AVERAGE_DELAY)) + geom_bar(stat='identity') +
-  ggsave(file.path('graphs/CSX415_Project_Data_visualizations', 'average_delays.bar.pdf'))
+    ggtitle("Average Delays") +
+    scale_fill_manual('Dly',values=c('red')) +
+    ggsave(file.path('graphs/CSX415_Project_Data_visualizations', 'average_delays.bar.png'))
 
 ggplot(allcancellations, aes(x=IATA_CODE, y=AVERAGE_CANCELLATIONS)) + geom_bar(stat='identity') +
-  ggsave(file.path('graphs/CSX415_Project_Data_visualizations','average_cancellations.bar.pdf'))
+    ggtitle("Average Cancellations") +
+    scale_fill_manual('Cncl',values=c("red")) +
+    ggsave(file.path('graphs/CSX415_Project_Data_visualizations','average_cancellations.bar.png'))
 
-rm(cancellationsdb)
-rm(flights)
-rm(allcancellations)
-rm(alldelays)
-rm(cancellationsagg)
-rm(delaysdb)
-rm(cancellationsdb)
+ggplot(DelaysAndCancellations,aes(factor(MONTH),group=DelayedOrCancelled, fill=factor(DelayedOrCancelled))) + geom_bar() +
+    ggtitle("Delayed or Cancellations Per Month") +
+    scale_fill_manual('Dly',values=c("blue","red")) +
+    ggsave(file.path('graphs/CSX415_Project_Data_visualizations','cancellations_per_month.png'))
+
+ggplot(DelaysAndCancellations,aes(factor(DAY_OF_WEEK),group=DelayedOrCancelled, fill=factor(DelayedOrCancelled))) + geom_bar() +
+    ggtitle("Delayed or Cancellations Per Day of Week") +
+    scale_fill_manual('Dly',values=c("blue","red")) +
+    ggsave(file.path('graphs/CSX415_Project_Data_visualizations','cancellations_per_day_of_week.png'))
+
+DlyCnclDb <- DelaysAndCancellations[DelaysAndCancellations$DEPARTURE_TIME != 0,]
+ggplot(DlyCnclDb,aes(DEPARTURE_TIME,group=DelayedOrCancelled, fill=factor(DelayedOrCancelled))) + geom_histogram() +
+    ggtitle("Delayed or Cancellations Per Time of Day") +
+    scale_fill_manual('Dly',values=c("blue","red")) +
+    ggsave(file.path('graphs/CSX415_Project_Data_visualizations','cancellations_time_of_day.png'))
+
+#rm(DlyCnclDb)
+#rm(cancellationsdb)
+#rm(flights)
+#rm(allcancellations)
+#rm(alldelays)
+#rm(cancellationsagg)
+#rm(delaysdb)
+#rm(cancellationsdb)
 
 

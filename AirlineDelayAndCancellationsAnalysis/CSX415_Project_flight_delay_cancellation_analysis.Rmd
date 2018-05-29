@@ -34,6 +34,27 @@ load.project()
 ```{r Perform Exploratory Data Analysis : graphs stored in graph directory}
 source('src/01-EDA/CSX415_Project_ExploratoryDataAnalysis.R')
 ```
+
+```{r plot1}
+ggplot(alldelays, aes(x=IATA_CODE, y=AVERAGE_DELAY)) + geom_bar(stat='identity') + ggtitle("Average Delays")
+```
+
+```{r plot2}
+ggplot(allcancellations, aes(x=IATA_CODE, y=AVERAGE_CANCELLATIONS)) +  geom_bar(stat='identity') +  ggtitle("Average Cancellations")
+```
+
+```{r plot3}
+ggplot(DelaysAndCancellations,aes(factor(MONTH), group=DelayedOrCancelled, fill=factor(DelayedOrCancelled))) + geom_bar() +  ggtitle("Delayed or Cancellations Per Month")
+```
+
+```{r plot4}
+ggplot(DelaysAndCancellations,aes(factor(DAY_OF_WEEK), group=DelayedOrCancelled, fill=factor(DelayedOrCancelled))) + geom_bar() + ggtitle("Delayed or Cancellations Per Day of Week")
+```
+
+```{r plot5}
+ggplot(DlyCnclDb,aes(DEPARTURE_TIME, group=DelayedOrCancelled, fill=factor(DelayedOrCancelled))) +  geom_histogram() + ggtitle("Delayed or Cancellations Per Time of Day")
+```
+
 ## PreProcess Data
 #### Remove zero variance columns
 #### Test-Train split
