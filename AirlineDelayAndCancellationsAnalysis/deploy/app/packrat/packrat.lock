@@ -25,6 +25,16 @@ Source: CRAN
 Version: 0.6.13
 Hash: cfce0bc7ed5ba0cdc47182698fae1d24
 
+Package: flights
+Source: github
+Version: 0.0.2.3
+Hash: ae7d1a65bc5d6c99d72f3380b92ac7c6
+Requires: jsonlite, rpart
+GithubRepo: flights
+GithubUsername: ajeypatil
+GithubRef: master
+GithubSha1: c1eaaaec81ecdd838909c7f14b7693442c0e4183
+
 Package: git2r
 Source: CRAN
 Version: 0.19.0
@@ -72,6 +82,11 @@ Package: packrat
 Source: CRAN
 Version: 0.4.8-1
 Hash: 6ad605ba7b4b476d84be6632393f5765
+
+Package: rpart
+Source: CRAN
+Version: 4.1-13
+Hash: 1d1f155d009e010e7d6634a90a87cead
 
 Package: rstudioapi
 Source: CRAN

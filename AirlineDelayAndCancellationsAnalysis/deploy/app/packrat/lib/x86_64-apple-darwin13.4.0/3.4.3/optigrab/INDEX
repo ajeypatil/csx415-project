@@ -1,0 +1,19 @@
+gnu_style               GNU-style command line options
+is.flag                 Determine if/which vector element are options
+                        flags
+java_style              Java-style command line options
+ms_style                Microsoft-style command line options
+opt_assign              Get option and assign to variables
+opt_expand              Expand argument vector to split names from
+                        values This is an internal function and should
+                        generally not be called directly.
+opt_get                 Get option's values from the command-line
+opt_get_args            Return arguments to Rscript
+opt_get_path            Get path current running script
+opt_get_verb            Get verb from the command line
+opt_help                Automatic usage/help information
+opt_split_args          Split command arguments
+opt_style               Get or set the optigrab style
+optigrab                Optigrab
+str_to_opts             Split a string bases on whitespace
+this_file               this_file
