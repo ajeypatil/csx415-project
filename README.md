@@ -14,6 +14,10 @@ The project analyzes flight data from The U.S. Department of Transportation's (D
 	  csx415-project/AirlineDelayAndCancellationsAnalysis/CSX415_Project_flight_delay_cancellation_analysis.Rmd
 
 ## Deployment Package
-	Deploy Tarball: csx415-project/AirlineDelayAndCancellationsAnalysis/deploy/app/packrat/bundles
+	Installation Tarball: csx415-project/AirlineDelayAndCancellationsAnalysis/deploy/app/packrat/bundles
 	Deploy App: csx415-project/AirlineDelayAndCancellationsAnalysis/deploy/app/predictFlightDelayCancellation.R 
+
+## Application Installation Instructions
+	tar xvzf csx415-project/AirlineDelayAndCancellationsAnalysis/deploy/app/packrat/bundles/app-2018-05-30.tar.gz
+
 
